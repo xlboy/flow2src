@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+dist
+*.local
+.history
+node_modules
+.pnpm-debug.log
+coverage
+package-lock.json

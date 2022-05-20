@@ -1,0 +1,28 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": ".."
+    },
+    {
+      "name": "client",
+      "path": "../packages/client"
+    },
+    {
+      "name": "node",
+      "path": "../packages/node"
+    }
+  ],
+  "settings": {
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+    "eslint.options": {
+      "extensions": [".js", ".jsx", ".ts", ".tsx"]
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true,
+    "typescript.tsdk": "root/node_modules/typescript/lib",
+    "commentTranslate.source": "Google"
+  }
+}
