@@ -1,12 +1,23 @@
 {
-  "include": ["./src"],
+  "include": ["./"],
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "@twind/typescript-plugin",
+        "tags": ["tw", "cx", "apply"],
+        "attributes": ["tw"],
+        "styles": ["styled", "stitched"]
+      }
+    ]
   }
 }

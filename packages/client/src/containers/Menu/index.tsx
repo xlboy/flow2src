@@ -1,9 +1,17 @@
 import { Button } from 'antd';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React from 'react';
-import { flowTools } from '../pages/home/core/data';
+import { apply, tw } from 'twind';
+import { css } from 'twind/css';
+import { flowTools } from '@/core/data';
 
 interface LayoutMenuProps {}
+
+const menuWrapper = tw(css`
+  ${apply`h-full bg-[#f8f8f8] p-[10px] box-border`}
+  ${apply`border(r-1 solid [#d9d9d9])`}
+  flex-basis: 300px;
+`);
 
 const LayoutMenu: React.FC<LayoutMenuProps> = () => {
   const handleDrag = (ev: React.DragEvent<HTMLButtonElement>, node: Record<string, any>) => {
@@ -13,8 +21,8 @@ const LayoutMenu: React.FC<LayoutMenuProps> = () => {
   const renderFlow = (): React.ReactNode => {
     return (
       <>
-        <h3 className="w-full text-center">流程图</h3>
-        <div className="w-full flex p-3 flex-wrap flex-start">
+        <h3 className={tw`w-full text-center`}>流程图</h3>
+        <div className={tw`w-full p-3 flex(& wrap) justify-start`}>
           {flowTools.map(item => (
             <Button
               key={item.name}
@@ -22,9 +30,9 @@ const LayoutMenu: React.FC<LayoutMenuProps> = () => {
                 handleDrag(ev, item.data);
               }}
               draggable
-              className="!p-0 !m-5"
+              className={tw`!p-0 !m-5`}
             >
-              <i className={classNames(['iconfont', item.icon])} style={{ fontSize: 20 }}></i>
+              <i className={clsx(['iconfont', (item as any).icon])} style={{ fontSize: 20 }}></i>
             </Button>
           ))}
         </div>
@@ -32,7 +40,7 @@ const LayoutMenu: React.FC<LayoutMenuProps> = () => {
     );
   };
 
-  return <div className="app-layout-menu">{renderFlow()}</div>;
+  return <div className={menuWrapper}>{renderFlow()}</div>;
 };
 
 export default LayoutMenu;

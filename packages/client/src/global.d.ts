@@ -1,4 +1,5 @@
 import type { Topology } from '@topology/core';
+import 'vite/client';
 
 declare module '*.svg' {
   import type * as React from 'react';
@@ -7,7 +8,5 @@ declare module '*.svg' {
 }
 declare global {
   declare let rootCanvas: Topology;
-  interface Window {
-    test(): void;
-  }
+  interface Window {}
 }
