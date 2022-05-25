@@ -68,7 +68,7 @@
     "typescript": "^4.7.2"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,js}": [
+    "packages/**/*.{ts,tsx,js}": [
       "eslint . --ext ts --ext tsx --ext js"
     ]
   },
