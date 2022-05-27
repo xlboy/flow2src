@@ -7,7 +7,7 @@ import { flowTools } from '@/core/data';
 
 interface LayoutMenuProps {}
 
-const menuWrapper = tw(css`
+const menuWrapperStyle = tw(css`
   ${apply`h-full bg-[#f8f8f8] p-[10px] box-border`}
   ${apply`border(r-1 solid [#d9d9d9])`}
   flex-basis: 300px;
@@ -40,7 +40,7 @@ const LayoutMenu: React.FC<LayoutMenuProps> = () => {
     );
   };
 
-  return <div className={menuWrapper}>{renderFlow()}</div>;
+  return <div className={menuWrapperStyle}>{renderFlow()}</div>;
 };
 
 export default LayoutMenu;
