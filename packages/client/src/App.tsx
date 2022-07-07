@@ -1,14 +1,12 @@
 import { useMount, useUpdate } from 'ahooks';
-import React, { memo, useRef } from 'react';
-import LayoutContent from '../../Content';
+import React, { useRef } from 'react';
+import { tw } from 'twind';
+import LayoutContent from './containers/Content';
+import LayoutMenu from './containers/Menu';
 import CanvasController from './core/controller';
-import './index.less';
-import LayoutMenu from '../../Menu';
-import LayoutProps from '../../Props';
+import LayoutProps from './containers/Props';
 
-interface LayoutPageProps {}
-
-const LayoutPage: React.FC<LayoutPageProps> = () => {
+const App: React.FC = () => {
   const canvasController = useRef<CanvasController>();
   const forceUpdateComponent = useUpdate();
 
@@ -19,7 +17,7 @@ const LayoutPage: React.FC<LayoutPageProps> = () => {
   });
 
   return (
-    <div className="app-layout">
+    <div className={tw`h-[100vh] w-full flex`}>
       <LayoutMenu />
       <LayoutContent />
       {canvasController.current && <LayoutProps canvasController={canvasController.current} />}
@@ -27,4 +25,4 @@ const LayoutPage: React.FC<LayoutPageProps> = () => {
   );
 };
 
-export default memo(LayoutPage);
+export default App;

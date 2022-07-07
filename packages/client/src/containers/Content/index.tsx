@@ -1,10 +1,11 @@
 import React, { memo } from 'react';
-import { config } from '../pages/home/core/config';
+import { tw } from 'twind';
+import { config } from '@/core/config';
 
 interface LayoutContentProps {}
 
 const LayoutContent: React.FC<LayoutContentProps> = () => {
-  return <div className="app-layout-content" id={config.canvasId}></div>;
+  return <div className={tw`flex-1 h-full !overflow-hidden`} id={config.canvasId}></div>;
 };
 
 export default memo(LayoutContent);

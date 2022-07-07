@@ -1,7 +1,7 @@
 import { useMemoizedFn, useMount, useRafState } from 'ahooks';
 import React, { memo } from 'react';
 import type { ReadonlyDeep } from 'type-fest';
-import type CanvasController from '../pages/home/core/controller';
+import type CanvasController from '@/core/controller';
 import type { RootState } from './types';
 
 interface LayoutPropsProps {
